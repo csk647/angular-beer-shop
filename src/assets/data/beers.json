@@ -1,0 +1,108 @@
+[{
+        "id": 1,
+        "name": "Cass",
+        "image": "url",
+        "tags": [{
+            "key": 1,
+            "name": "국산맥주"
+        }, {
+            "key": 3,
+            "name": "라거"
+        }],
+        "price": 3000,
+        "stock": 10
+    },
+    {
+        "id": 2,
+        "name": "Filte",
+        "image": "url",
+        "tags": [{
+            "key": 1,
+            "name": "국산맥주"
+        }, {
+            "key": 3,
+            "name": "라거"
+        }, {
+            "key": 7,
+            "name": "유사맥주"
+        }],
+        "price": 2000,
+        "stock": 15
+    },
+    {
+        "id": 3,
+        "name": "Kozel",
+        "image": "url",
+        "tags": [{
+            "key": 2,
+            "name": "수입맥주"
+        }],
+        "price": 4000,
+        "stock": 10
+    },
+    {
+        "id": 4,
+        "name": "Stella",
+        "image": "url",
+        "tags": [{
+            "key": 2,
+            "name": "수입맥주"
+        }],
+        "price": 5000,
+        "stock": 10
+    },
+    {
+        "id": 5,
+        "name": "CarsBurg",
+        "image": "url",
+        "tags": [{
+            "key": 2,
+            "name": "수입맥주"
+        }],
+        "price": 5000,
+        "stock": 9
+    },
+    {
+        "id": 6,
+        "name": "칭따오",
+        "image": "url",
+        "tags": [{
+            "key": 2,
+            "name": "수입맥주"
+        }, {
+            "key": 5,
+            "name": "페일 라거"
+        }],
+        "price": 4000,
+        "stock": 6
+    },
+    {
+        "id": 7,
+        "name": "버드와이저",
+        "image": "url",
+        "tags": [{
+            "key": 2,
+            "name": "수입맥주"
+        }, {
+            "key": 3,
+            "name": "라거"
+        }],
+        "price": 5000,
+        "stock": 10
+    },
+    {
+        "id": 8,
+        "name": "파울라너 헤페 바이스",
+        "image": "url",
+        "tags": [{
+            "key": 2,
+            "name": "수입맥주"
+        }, {
+            "key": 6,
+            "name": "헤페 바이스"
+        }],
+        "price": 5000,
+        "stock": 10
+    }
+
+]
