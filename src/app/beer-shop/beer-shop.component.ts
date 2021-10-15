@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Beer } from '../interfaces/beer-common';
+import { Beer,Tag } from '../interfaces/beer-common';
 // import beers from '../../assets/data/beers.json';
 
 @Component({
@@ -8,8 +8,12 @@ import { Beer } from '../interfaces/beer-common';
   templateUrl: './beer-shop.component.html',
   styleUrls: ['./beer-shop.component.css']
 })
+
 export class BeerShopComponent implements OnInit {
   beers: any = [];
+  filterList: any = [];
+  selectedFilter: Array<Tag> = [];
+  oneSelectedFilterBox: any;
 
   constructor(private httpClient: HttpClient) { };
 
@@ -17,8 +21,35 @@ export class BeerShopComponent implements OnInit {
     this.httpClient.get("assets/data/beers.json").subscribe((data) => {
       this.beers = data;
       console.log(data)
+    });
+
+    this.httpClient.get("assets/data/tags.json").subscribe((data) => {
+      this.filterList = data;
     })
 
   };
+
+  addFilter(filter:Tag){
+
+    console.log(this.selectedFilter, filter)
+    this.selectedFilter.push(filter)
+    // 마지막 선택된 filter 를 oneSelectedFilterBox에 넣기
+    this.oneSelectedFilterBox = filter;
+    // checkFilterExist 는 포함되는게 있으면 array로 만들어짐
+    let checkFilterExist = this.selectedFilter.filter((el)=> el.name === filter.name);
+    // length가 0 보다 크면 
+    if(checkFilterExist.length > 0){
+      checkFilterExist = checkFilterExist.filter((el) => el.name !== filter.name )
+      this.selectedFilter = checkFilterExist
+    } else {
+      checkFilterExist.push(filter)
+    }
+    this.selectedFilter.push(filter)
+    console.log(this.selectedFilter)
+    const findIndex = this.filterList.findIndex((el:any) => el ===filter)
+    this.oneSelectedFilterBox = this.oneSelectedFilterBox.push(findIndex);
+    
+    console.log(findIndex)
+  }
 
 }
