@@ -5,11 +5,11 @@ import { BeerShopComponent } from './beer-shop/beer-shop.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
-  { path: 'beer', component: BeerShopComponent }
+  { path: 'beer', component: BeerShopComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

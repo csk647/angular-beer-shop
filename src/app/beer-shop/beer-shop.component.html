@@ -1,25 +1,30 @@
 <div class="container">
-    <div class="header">
-        <span>맥주담기</span>
-        <div>
-            <span>카트</span>
-            <span>4</span>
-        </div>
-
+  <div class="header">
+    <span>맥주담기</span>
+    <div>
+      <span>카트</span>
+      <span>4</span>
     </div>
-    <div class="filter">
-        <div class="one-filter" *ngFor="let tag of filterList" (click)="addFilter(tag)">{{tag.name}}</div>
+  </div>
+  <div class="filter">
+    <div
+      class="one-filter"
+      *ngFor="let tag of filterList"
+      (click)="addFilter(tag)"
+    >
+      {{ tag.name }}
     </div>
-    <div class="beer-box" *ngFor="let item of beers">
-        <div class="one-beer-info">
-            <img class="beer-img" />
-            <div class="info-card">
-                <p>{{item.name}}</p>
-                <p *ngFor="let filter of item.tags">{{filter.name}}</p>
-                <p>{{item.price ? item.price : 0}}원</p>
-                <p>재고 {{item.stock}}</p>
-            </div>
-        </div>
-        <button>담기</button>
+  </div>
+  <div class="beer-box" *ngFor="let item of beers">
+    <div class="one-beer-info">
+      <img class="beer-img" />
+      <div class="info-card">
+        <p>{{ item.name }}</p>
+        <p *ngFor="let filter of item.tags">{{ filter.name }}</p>
+        <p>{{ item.price ? item.price : 0 }}원</p>
+        <p>재고 {{ item.stock }}</p>
+      </div>
     </div>
+    <button (click)="sendToMyCart(item)">담기</button>
+  </div>
 </div>
